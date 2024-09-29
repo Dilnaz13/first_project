@@ -1,1 +1,1 @@
-# Ayazhanova-Dilnaz
+# first_project

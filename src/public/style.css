@@ -127,7 +127,7 @@ p {
     display: flex; /* Применение Flexbox для управления содержимым */
 }
 
-.video1 video {
+.video1 iframe {
     margin: auto; /* Центрирование видео по горизонтали */
 }
 

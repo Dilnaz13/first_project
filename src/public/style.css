@@ -5,8 +5,14 @@
     justify-content: space-between; /* Распределяет дочерние элементы .navbar равномерно, 
     с максимальным пространством между ними */
     background-color: #faf7f7; /* Устанавливает фоновый цвет для .navbar */
+    margin-bottom: 20px;
+    height: 70px;
 }
 
+.navbar img {
+    margin-top: 10px;
+    margin-left: 15px;
+}
 .navbar ul {
     display: flex; /* Устанавливает контейнер ul как flex-контейнер для его дочерних элементов (li) */
     flex-direction: row; /* Располагает элементы списка (li) в строку (по горизонтали) */
@@ -20,14 +26,18 @@
 }
 
 .navbar ul li:hover {
-    background-color: #dbbeb2; /* Изменяет фоновый цвет элемента списка при наведении курсора */
     border-radius: 20%; /* Скругляет углы элемента списка при наведении курсора */
 }
 
 .navbar ul li a {
     text-decoration: none; /* Убирает подчеркивание у ссылок */
-    color: black; /* Устанавливает цвет текста ссылок черным */
+    color: black; 
     margin: auto; /* Центрирует текст внутри элемента списка */
+}
+
+.navbar ul li a:hover {
+    color: #dbbeb2;
+    font-size: 1.2rem;
 }
 
 .navbar div {
@@ -42,7 +52,6 @@
 }
 
 .navbar div:hover {
-    background-color: #dbbeb2; /* Изменяет фоновый цвет div при наведении курсора */
     border-radius: 20%; /* Скругляет углы div при наведении курсора */
 }
 
@@ -57,6 +66,11 @@
 .person, .interests {
     width: 25%;
     margin: auto;
+}
+
+.essay {
+    margin-right: 25%;
+    margin-left: 25%;
 }
 
 /* Стили для изображений внутри контейнера */
@@ -85,6 +99,7 @@ main {
     /* Градиентный фон, плавно переходящий от светлого к более темному оттенку */
 }
 
+
 /* Стили для текста в параграфах */
 p {
     text-align: justify; /* Выравнивание текста по ширине */
@@ -94,10 +109,6 @@ p {
     margin-left: 10px; /* Отступы по бокам */
 }
 
-/* Эффект при наведении на параграф */
-p:hover {
-    background-color: #d9bdaf; /* Синий фон при наведении */
-}
 
 /* Секции внутри контейнера */
 .container section {
@@ -116,7 +127,7 @@ p:hover {
     display: flex; /* Применение Flexbox для управления содержимым */
 }
 
-.video1 iframe {
+.video1 video {
     margin: auto; /* Центрирование видео по горизонтали */
 }
 
@@ -128,6 +139,11 @@ p:hover {
     margin: auto; /* Центрирование iframe по горизонтали */
 }
 
+.video1 p, .video2 p, .video3 p {
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
 .container-audio {
     display: flex;
     flex-direction: column; /* Контейнер для аудио, элементы располагаются вертикально */
@@ -136,7 +152,7 @@ p:hover {
 .audio1, .audio2, .audio3 {
     display: flex;
     flex-direction: column; /* Внутренние элементы располагаются вертикально */
-    margin-top: 10px; /* Отступ сверху для каждого аудио-блока */
+    margin-top: 20px; /* Отступ сверху для каждого аудио-блока */
 }
 
 .audio1 audio, .audio2 audio, .audio3 audio {
@@ -184,6 +200,11 @@ p:hover {
     transition: 0.7s ease; /* Плавный переход фона за 0.7 секунды */
 }
 
+.book1 p, .book2 p, .book3 p {
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
 footer {
     display: flex;
     flex-direction: row; /* Элементы внутри футера располагаются горизонтально */
@@ -197,177 +218,6 @@ footer a {
 .burger {
     display: none;
 }
-@media (max-width: 700px) { 
-/* При ширине экрана до 700px */
-    .container {
-        display: flex;
-        flex-direction: column; /* Переключение на вертикальный макет */
-    }
-    
-    .person {
-        display: flex;
-        flex-direction: column; /* Внутренние элементы располагаются вертикально */
-        flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
-        width: 100%; /* Элемент занимает всю ширину контейнера */
-        margin: 0; /* Убираем отступы */
-    }
-
-    .person p {
-        margin-top: 5px; /* Отступ сверху для параграфов */
-        margin-bottom: 10px; /* Отступ снизу для параграфов */
-    }
-    
-    .container img {
-        margin-top: 20px; /* Отступ сверху для изображений */
-        border-radius: 10%; /* Скругление углов изображений */
-        box-shadow: 5px 5px 5px gray; /* Тень для изображений */
-        width: 95%; /* Изображение занимает 95% ширины контейнера */
-        height: auto; /* Высота автоматически подстраивается под ширину */
-        margin: auto; /* Центрирование изображения по горизонтали */
-    }
-    
-    .container img:hover {
-        transform: scale(1.03); /* Легкое увеличение изображения при наведении */
-        transition: 0.5s ease; /* Плавный переход увеличения за 0.5 секунды */
-        box-shadow: 5px 5px 5px #d9bdaf; /* Изменение тени при наведении */
-    }
-
-    .interests {
-        display: flex;
-        flex-direction: column; /* Внутренние элементы располагаются вертикально */
-        flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
-        width: 100%; /* Элемент занимает всю ширину контейнера */
-        margin: 0; /* Убираем отступы */
-    }
-
-    .interests p {
-        margin-top: 10px; /* Отступ сверху для параграфов */
-        margin-bottom: 0; /* Убираем отступ снизу */
-    }
-
-    h2 {
-        margin: 10px; /* Отступы вокруг заголовка */
-        text-align: center; /* Выравнивание заголовка по центру */
-    }
-
-    .video1 video {
-        margin-top: 20px; /* Отступ сверху для видео */
-        width: 95%; /* Видео занимает 95% ширины контейнера */
-        height: auto; /* Высота автоматически подстраивается под ширину */
-    }
-    
-    .video2 iframe {
-        width: 95%; /* Iframe занимает 95% ширины контейнера */
-        height: 320px; /* Высота Iframe фиксирована */
-    }
-    
-    .video3 iframe {
-        width: 95%; /* Iframe занимает 95% ширины контейнера */
-        height: 320px; /* Высота Iframe фиксирована */
-    }
-
-    .book1 img, .book2 img, .book3 img {
-        width: 95%; /* Изображения книг занимают 95% ширины контейнера */
-        height: auto; /* Высота автоматически подстраивается под ширину */
-    }
-}
-
-@media (min-width: 700px) and (max-width: 900px) { /* При ширине экрана от 700px до 900px */
-
-    .burger {
-        display: block; /* Отображение элемента как блочный элемент */
-        position: relative; /* Относительное позиционирование для внутренних элементов */
-        width: 40px; /* Ширина контейнера */
-        height: 40px; /* Высота контейнера */
-        margin: auto; /* Автоматические отступы по бокам для центрирования */
-        margin-left: 20px; /* Отступ слева */
-        margin-right: 5px; /* Отступ справа */
-    }
-
-    .burger span {
-        position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */
-        width: 30px; /* Ширина каждой полоски */
-        left: 5px; /* Отступ от левого края контейнера */
-        height: 3px; /* Высота полоски */
-        background-color: black; /* Цвет полоски */
-        bottom: 20px; /* Расположение полоски от нижнего края контейнера */
-    }
-    
-    .burger span:nth-child(1) {
-        transform: translateY(-10px); /* Перемещение первой полоски вверх на 10px */
-    }
-    
-    .burger span:nth-child(3) {
-        transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
-    }
-    
-    .navbar ul {
-        position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
-        background: radial-gradient(circle at top left, rgb(255, 255, 254) 0%, rgba(237, 233, 226, 0.72) 37%, rgb(243, 232, 208)); /* Радужный градиентный фон от верхнего левого угла */
-        flex-direction: column; /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
-        width: 30%; /* Ширина списка равна 30% от ширины родительского элемента */
-        height: auto; /* Высота автоматически подстраивается под содержимое */
-        top: 68px; /* Расположение списка на 68px ниже от верхнего края родительского элемента */
-        left: -40%; /* Расположение списка на 40% ширины родительского элемента слева (вне видимой области) */
-        z-index: 2; /* Уровень стека элемента, чтобы он перекрывал другие элементы с меньшим z-index */
-    }
-    
-    .navbar ul li {
-        margin-top: 10px; /* Отступ сверху для элементов списка */
-    }
-    
-    .navbar ul li:hover {
-        background-color: black; /* Цвет фона элемента становится черным при наведении */
-        transform: scale(1.07); /* Увеличение размера элемента на 7% при наведении */
-        transition: 0.4s ease; /* Плавный переход эффекта с продолжительностью 0.4 секунды */
-        border-radius: 5%; /* Закругление углов элемента на 5% */
-    }
-    
-    .navbar ul li a:hover {
-        color: white; /* Цвет текста ссылки становится белым при наведении */
-    }
-    
-    .navbar ul li:nth-child(1) {
-        margin-top: 20px; /* Увеличение отступа сверху для первого элемента списка */
-    }
-    
-    .navbar ul li a {
-        margin-left: 0; /* Установка нулевого отступа слева для ссылок */
-        font-size: 1.2rem; /* Установка размера шрифта в 1.2rem */
-    }
-    
-    .navbar.open ul {
-        transform: translateX(100%); /* Перемещение меню на 100% ширины вправо (выдвигается за пределы видимой области) */
-        transition: 0.7s ease-in-out; /* Плавный переход эффекта с продолжительностью 0.7 секунды */
-    }
-    
-    .navbar.open .burger span:nth-child(1) {
-        transform: translateY(0) rotate(45deg); /* Поворачивает первую полоску на 45 градусов и возвращает в исходное положение по вертикали */
-    }
-    
-    .navbar.open .burger span:nth-child(2) {
-        opacity: 0; /* Делает вторую полоску полностью прозрачной (не видимой) */
-    }
-    
-    .navbar.open .burger span:nth-child(3) {
-        transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
-    }
-    
-    .container img {
-        margin-top: 20px; /* Отступ сверху для изображений */
-        border-radius: 10%; /* Скругление углов изображений */
-        box-shadow: 5px 5px 5px gray; /* Тень для изображений */
-        width: 320px; /* Ширина изображения фиксирована */
-        height: 200px; /* Высота изображения фиксирована */
-        margin: auto; /* Центрирование изображения по горизонтали */
-    }
-}
-
-
-
-
-
- 
 
 .navbar ul .work {
     position: relative; /* Set the position to relative to enable absolute positioning of its child elements */
@@ -388,7 +238,7 @@ footer a {
 
 .navbar ul .work ul li {
     z-index: 20; /* Ensure list items have the same stacking order as the parent */
-    background-color: #d9bdaf; /* Set background color */
+    background-color:#d9bdaf; /* Set background color */
     margin-bottom: 2px; /* Add space between items */
 }
 
@@ -397,49 +247,14 @@ footer a {
 }
 
 .navbar ul .work ul li:hover {
-    background-color: white;
-    border-radius: 0;
+    background-color: #d9bdaf; /* Change background color on hover */
 }
 
-
-
-
-.navbar ul .work ul {
-    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
-    flex-direction: column; /* Arrange children in a column */
-    left: 10px; /* Offset the dropdown 10px from the left of the parent */
-    top: 0; /* Align the top of the dropdown with the top of the parent */
-    width: 100px; /* Set a fixed width for the dropdown */
-    display: none; /* Initially hide the dropdown */
-    padding: 0; /* Remove default padding */
-    z-index: 20; /* Set a higher stacking order for the dropdown */
+.navbar ul .work ul li a:hover {
+    color: white; /* Change background color on hover */
 }
 
-.navbar ul .work ul li {
-    margin-top: 0; /* Remove top margin */
-    margin-bottom: 10px; /* Add bottom margin */
-    background-color: unset; /* Remove default background color */
-    font-size: 1.2rem; /* Increase font size */
-    margin-left: 10px; /* Offset the list item 10px from the left */
-    color: black; /* Set text color to black */
-}
-
-.navbar ul .work ul li:hover {
-    background-color: black; /* Change background color to black on hover */
-}
-
-.navbar ul .work ul li:hover a:hover {
-    color: white; /* Change text color to white when hovering over the link */
-}
-
-.navbar ul .work:hover ul li a {
-    color: black; /* Set text color to black when hovering over the parent */
-}
-
-
-
-
-form {
+.form {
     flex-direction: column; /* Arrange the children of the .form container in a column layout */
 }
 
@@ -480,12 +295,423 @@ form {
     font-size: 1.2rem; /* Maintain the font size of the button text on hover */
     background-color: #91130c; /* Change the background color of the button on hover */
     color: rgb(248, 243, 243); /* Change the text color of the button on hover */
+    cursor: pointer;
 }
 
-.form form fieldset {
-    width: 65%;
+.math {
+    display: flex;
+    flex-direction: column;
 }
 
-.form form fieldset {
-    width: 80%;
+.math form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.math form fieldset {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.math form fieldset legend {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.math form fieldset .counters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.math form fieldset .counters div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+.math form fieldset .counters div label, input {
+    margin: auto;
+    text-align: center;
+}
+
+.math form fieldset .counters div input {
+    width: 70%;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.math form fieldset .butcont {
+    display: flex;
+    flex: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.math form fieldset .butcont button {
+    display: block;
+    width: 20%;
+    box-sizing: border-box;
+    height: 40px;
+    margin: auto;
+}
+
+.math form fieldset .butcont button:hover {
+    background-color: #d9bdaf;
+    color: white;
+    cursor: pointer;
+}
+
+.math form fieldset p {
+    display: flex;
+    margin: 0;
+}
+
+.math form fieldset p span {
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+.API {
+    display: flex;
+    flex-direction: column;
+}
+
+.API .Par {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 20px;
+} 
+
+.API .Par img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Lond {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 20px;
+} 
+
+.API .Lond img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Wash {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 20px;
+} 
+
+.API .Wash img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Par img {
+    border-radius: 8px;
+}
+
+.API .Par span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10%;
+    padding-top: 20%;
+    width: 100%;
+}
+
+.API .Lond img {
+    border-radius: 8px;
+}
+
+.API .Lond span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10%;
+    padding-top: 20%;
+    width: 100%;
+}
+
+.API .Wash img {
+    border-radius: 8px;
+}
+
+.API .Wash span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10%;
+    padding-top: 20%;
+    width: 100%;
+}
+
+
+
+@media (max-width: 700px) {
+    /* При ширине экрана до 700px */
+    
+    .container {
+        display: flex;
+        flex-direction: column; /* Переключение на вертикальный макет */
+    }
+    
+    .person {
+        display: flex;
+        flex-direction: column; /* Внутренние элементы располагаются вертикально */
+        flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+        width: 100%; /* Элемент занимает всю ширину контейнера */
+        margin: 0; /* Убираем отступы */
+    }
+
+    .person p {
+        margin-top: 5px; /* Отступ сверху для параграфов */
+        margin-bottom: 10px; /* Отступ снизу для параграфов */
+    }
+    
+    .container img {
+        margin-top: 20px; /* Отступ сверху для изображений */
+        border-radius: 10%; /* Скругление углов изображений */
+        box-shadow: 5px 5px 5px gray; /* Тень для изображений */
+        width: 95%; /* Изображение занимает 95% ширины контейнера */
+        height: auto; /* Высота автоматически подстраивается под ширину */
+        margin: auto; /* Центрирование изображения по горизонтали */
+    }
+    
+    .container img:hover {
+        transform: scale(1.03); /* Легкое увеличение изображения при наведении */
+        transition: 0.5s ease; /* Плавный переход увеличения за 0.5 секунды */
+    }
+
+    .interests {
+        display: flex;
+        flex-direction: column; /* Внутренние элементы располагаются вертикально */
+        flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+        width: 100%; /* Элемент занимает всю ширину контейнера */
+        margin: 0; /* Убираем отступы */
+    }
+
+    .interests p {
+        margin-top: 10px; /* Отступ сверху для параграфов */
+        margin-bottom: 0; /* Убираем отступ снизу */
+    }
+
+    h2 {
+        margin: 10px; /* Отступы вокруг заголовка */
+        text-align: center; /* Выравнивание заголовка по центру */
+    }
+
+    .video1 video {
+        margin-top: 20px; /* Отступ сверху для видео */
+        width: 95%; /* Видео занимает 95% ширины контейнера */
+        height: auto; /* Высота автоматически подстраивается под ширину */
+    }
+    
+    .video2 iframe {
+        width: 95%; /* Iframe занимает 95% ширины контейнера */
+        height: 320px; /* Высота Iframe фиксирована */
+    }
+    
+    .video3 iframe {
+        width: 95%; /* Iframe занимает 95% ширины контейнера */
+        height: 320px; /* Высота Iframe фиксирована */
+    }
+
+    .book1 img, .book2 img, .book3 img {
+        width: 95%; /* Изображения книг занимают 95% ширины контейнера */
+        height: auto; /* Высота автоматически подстраивается под ширину */
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .burger span {
+        position: absolute;
+        width: 30px;
+        left: 5px;
+        height: 3px;
+        background-color: black;
+        bottom: 20px;
+    }
+
+    .burger span:nth-child(1) {
+        transform: translateY(-10px);
+    }
+
+    .burger span:nth-child(3) {
+        transform: translateY(10px);
+    }
+    
+    .navbar ul {
+        position: absolute;
+        display: none;
+        
+        flex-direction: column;
+        width: 30%;
+        height: auto;
+        top: 68px;
+        right: 40%;
+        z-index: 2;
+    }
+
+    .navbar ul li {
+        text-align: right;
+        margin-top: 10px;
+        border: 1px solid #d9bdaf;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .navbar ul li:hover {
+        background-color: black;
+        transform: scale(1.07);
+        transition: 0.4s ease;
+        border-radius: 5%;
+    }    
+    
+    .navbar ul li a:hover {
+        color: white;
+    }    
+
+    .navbar ul li:nth-child(1) {
+        margin-top: 20px;
+    }
+    
+    .navbar ul li a {
+        margin-left: 35%; 
+        font-size: 1.2rem; 
+    }
+    
+    .navbar.open ul {
+        display: flex;
+        transform: translateX(100%);
+        transition: 0.7s ease-in-out;
+    }
+    
+    .navbar.open .burger span:nth-child(1) {
+        transform: translateY(0) rotate(45deg);
+    }
+    
+    .navbar.open .burger span:nth-child(2) {
+        opacity: 0; 
+    }
+    
+    .navbar.open .burger span:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+    }
+    
+    .navbar ul .work ul {
+        position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+        flex-direction: column; /* Arrange children in a column */
+        top: 10; /* Align the top of the dropdown with the top of the parent */
+        width: 80px; /* Set a fixed width for the dropdown */
+        display: none; /* Initially hide the dropdown */
+        padding: 0; /* Remove default padding */
+        z-index: 20; /* Set a higher stacking order for the dropdown */
+    }
+    
+    .navbar ul .work ul li {
+        margin-bottom: 10px; /* Add bottom margin */
+        font-size: 1.2rem; /* Increase font size */
+        margin-left: -80px; /* Offset the list item 10px from the left */
+        color: #d9bdaf; /* Set text color to black */
+        border: 1px solid rgb(196, 110, 170);
+        border-radius: 5px;
+        background-color: white;
+    }
+    
+    .navbar ul .work ul li:hover {
+        background-color: black; /* Change background color to black on hover */
+    }
+    
+    .navbar ul .work ul li:hover a:hover {
+        color: white; /* Change text color to white when hovering over the link */
+    }
+    
+    .navbar ul .work:hover ul li a {
+        color: black; /* Set text color to black when hovering over the parent */
+    }
+    
+    .form form fieldset {
+        width: 80%;
+    }
+    
+    .math form fieldset {
+        width: 70%;
+    }
+
+    .API .Par {
+        width: 100%;
+    }
+
+    .API .Lond {
+        width: 100%;
+    }
+
+    .API .Wash {
+        width: 100%;
+    }
+
+    .API .Par span {
+        font-size: 1.05rem;
+    }
+
+    .API .Lond span {
+        font-size: 1.05rem;
+    }
+
+    .API .Wash span {
+        font-size: 1.05rem;
+    }
+
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    /* При ширине экрана от 700px до 900px */
+    
+    .container img {
+        margin-top: 20px; /* Отступ сверху для изображений */
+        border-radius: 10%; /* Скругление углов изображений */
+        box-shadow: 5px 5px 5px gray; /* Тень для изображений */
+        width: 320px; /* Ширина изображения фиксирована */
+        height: 200px; /* Высота изображения фиксирована */
+        margin: auto; /* Центрирование изображения по горизонтали */
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .form form fieldset {
+        width: 65%;
+    }
 }
